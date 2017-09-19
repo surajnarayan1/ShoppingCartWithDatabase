@@ -20,9 +20,16 @@ namespace shopping_Cart
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var pname = TextBox1.Text;
-            var quantity = TextBox2.Text;
-            var price = Convert.ToInt32(TextBox3.Text);
+            var pname = TextBoxName.Text;
+            var quantity = TextBoxQuantity.Text;
+            try
+            {
+                var price = Convert.ToInt32(TextBoxPrice.Text);
+            }
+            catch(Exception ex)
+            {
+                Response.Write("<script>alert('Exception arised while the conversion of text value to integer" + ex.Message + "')</script>");
+            }
             try
             {
 

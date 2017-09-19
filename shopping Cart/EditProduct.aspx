@@ -10,9 +10,9 @@
     <form id="form1" runat="server">
         <div>
             Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price</div>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox3" runat="server" style="height: 22px"></asp:TextBox>
+        <asp:TextBox ID="TextBoxName" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxQuantity" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxPrice" runat="server" style="height: 22px"></asp:TextBox>
         <br />
         <br />
         <br />

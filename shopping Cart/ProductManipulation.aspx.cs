@@ -14,15 +14,23 @@ namespace shopping_Cart
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             DataTable dataTable = new DataTable();
-            using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SampleShoppingCartConnectionString"].ConnectionString))
+            try
             {
-                SqlCommand cmd = new SqlCommand("Select * from Products");
-                cmd.Connection = connection;
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
-                dataAdapter.Fill(dataTable);
+                using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SampleShoppingCartConnectionString"].ConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("Select * from Products");
+                    cmd.Connection = connection;
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                    dataAdapter.Fill(dataTable);
+                }
             }
-            foreach(DataRow row in dataTable.Rows)
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Exception  arised while making connection from Database" + ex.Message + "')</script>");
+            }
+            foreach (DataRow row in dataTable.Rows)
             {
 
                 try
@@ -55,8 +63,8 @@ namespace shopping_Cart
                     ProductTable.Rows.Add(actualTableRow);
 
                 }
-                
-                      catch (Exception ex)
+
+                catch (Exception ex)
                 {
                     Response.Write("<script>alert('Exception  arised while  loading data from database" + ex.Message + "')</script>");
 

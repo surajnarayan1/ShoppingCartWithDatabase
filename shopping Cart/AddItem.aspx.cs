@@ -20,10 +20,10 @@ namespace shopping_Cart
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var pid = TextBox1.Text;
-            var pname = TextBox2.Text;
-            var quantity = Convert.ToInt32(TextBox3.Text);
-            var price = TextBox4.Text;
+            var pid = TextBoxPid.Text;
+            var pname = TextBoxPname.Text;
+            var quantity = Convert.ToInt32(TextBoxQuantity.Text);
+            var price = TextBoxPrice.Text;
             try
             {
                 using (SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["SampleShoppingCartConnectionString"].ConnectionString))
